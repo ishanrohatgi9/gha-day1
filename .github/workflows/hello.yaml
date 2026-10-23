@@ -8,7 +8,7 @@ jobs:
 
 		steps:
 			- name: Say hello
-			  run: echo "Hello"
+			  run: echo "Hello from github actions"
 			
 			- name: Show where we are running 
 			  run: 
