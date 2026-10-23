@@ -21,7 +21,7 @@ jobs:
 			  run: ls -la
 
 			- name: Checkout the code
-			  run: actions/checkout@v4
+			  uses: actions/checkout@v4
 
 			- name: List files AFTER checkout
 			  run: ls -la
