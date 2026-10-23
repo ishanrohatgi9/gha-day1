@@ -3,25 +3,25 @@ name: Hello Github Actions
 on: push
 
 jobs:
-	hello:
-		runs on: ubuntu-latest
+  hello:
+    runs-on: ubuntu-latest
 
-		steps:
-			- name: Say hello
-			  run: echo "Hello from github actions"
-			
-			- name: Show where we are running 
-			  run: 
-				echo "Repo : ${{ github.repository }}"
-				echo "Event : ${{ github.event_name }}"
-				echo "Triggered by : ${{ github.actor }}"
-				echo "Runner OS : ${{ runner.os }}"
+    steps:
+      - name: Say hello
+        run: echo "Hello from github actions"
 
-			- name: List files BEFORE checkout
-			  run: ls -la
+      - name: Show where we are running
+        run: |
+          echo "Repo : ${{ github.repository }}"
+          echo "Event : ${{ github.event_name }}"
+          echo "Triggered by : ${{ github.actor }}"
+          echo "Runner OS : ${{ runner.os }}"
 
-			- name: Checkout the code
-			  uses: actions/checkout@v4
+      - name: List files BEFORE checkout
+        run: ls -la
 
-			- name: List files AFTER checkout
-			  run: ls -la
+      - name: Checkout the code
+        uses: actions/checkout@v4
+
+      - name: List files AFTER checkout
+        run: ls -la
